@@ -58,11 +58,27 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
-window.addEventListener('keydown',function(e){
+//改寫為箭頭函示寫法
+const playSound = (e) => {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   console.log(audio);
-});
+  if(!audio)return; //如果沒有觸發相關案件則不執行此function
+  audio.currentTime = 0; //將聲音檔時間歸零
+  audio.play();
+  key.classList.add('playing');
+}
+
+function removeTransition(e){
+  //console.log(e);
+  if(e.propertyName !== 'transform') return;
+  //console.log(e.propertyName);
+  this.classList.remove('playing');
+};
+
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+window.addEventListener('keydown',playSound);
 
 </script>
 
