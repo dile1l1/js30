@@ -49,6 +49,32 @@
         0 0 10px rgba(0,0,0,0.2);
     }
 
+    .marker{
+      position: absolute;
+      padding: 0 2px;
+      top: 50%;
+      left: 1%;
+      right: 1%;
+      height: 10px;
+      background: linear-gradient(to left, rgb(0, 0, 0) 5%, transparent 5%, transparent 95%, rgb(0, 0, 0) 95%);
+      transform: translate(0,-50%);
+    }
+    .marker0{
+      transform: translate(0,-50%) rotate(90deg);
+    }
+    .marker1{
+      transform: translate(0,-50%) rotate(60deg);
+    }
+    .marker2{
+      transform: translate(0,-50%) rotate(30deg);
+    }
+    .marker4{
+      transform: translate(0,-50%) rotate(-30deg);
+    }
+    .marker5{
+      transform: translate(0,-50%) rotate(-60deg);
+    }
+
     .clock-face {
       position: relative;
       width: 100%;
@@ -59,9 +85,17 @@
     .hand {
       width: 50%;
       height: 6px;
+    .nose{
       background: black;
       position: absolute;
       top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 4;
+    }
     }
 
   </style>
