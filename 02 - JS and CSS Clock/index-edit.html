@@ -42,6 +42,7 @@
     }
 
     .clock {
+      position: relative;
       width: 30rem;
       height: 30rem;
       border: 20px solid white;
@@ -87,6 +88,8 @@
       width: 100%;
       height: 100%;
       transform: translateY(-3px); /* account for the height of the clock hands */
+      /* transform: translateY(-3px);  */
+      /* account for the height of the clock hands */
     }
 
     .hand {
@@ -103,6 +106,28 @@
       border-radius: 50%;
       z-index: 4;
     }
+    .hand {
+      width: 6px;
+      height: 50%;
+      background: black;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      margin-left: -3px;
+      transform-origin: bottom;
+      /* transform: rotate(90deg); */
+      border-radius: 25px;
+    }
+    .hour-hand{
+      height: 30%;
+    }
+    .min-hand{
+      height: 20%;
+    }
+    .second-hand{
+      background: red;
+      width: 2px;
+      margin-left: -1px;
     }
 
   </style>
